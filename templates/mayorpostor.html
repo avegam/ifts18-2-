@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}mejores clientes{% endblock %}
+
+{% block page_content %}
+<div class="container">
+           
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>dinero</th>
+        
+      </tr>
+    </thead>
+    <tbody>         
+    
+    {% for j in range(farma|length) %}
+        
+          <tr>
+            <td>{{ farma[j][0] }}</td>
+            <td>{{ farma[j][1]|round }}</td>
+           
+          </tr>
+    {% endfor %}
+    
+    </tbody>
+  </table>
+</div>
+{% endblock %}

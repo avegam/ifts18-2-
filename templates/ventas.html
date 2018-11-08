@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}ventas{% endblock %}
+
+{% block page_content %}
+<div class="container">
+             
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{ orden[0] }}</th>
+        <th>{{ orden[1] }}</th>
+        <th>{{ orden[2] }}</th>
+        <th>{{ orden[3] }}</th>
+        <th>{{ orden[4] }}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+          
+    {% for f in range(ultimas_ventas|length) %}
+          <tr>
+            <td>{{ ultimas_ventas[f][0] }}</td>
+            <td>{{ ultimas_ventas[f][1] }}</td>
+            <td>{{ ultimas_ventas[f][2] }}</td>
+            <td>{{ ultimas_ventas[f][3] }}</td>
+            <td>{{ ultimas_ventas[f][4] }}</td>
+            
+           
+          </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}mejores clientes{% endblock %}
+
+{% block page_content %}
+<div class="container">
+           
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>dinero</th>
+        
+      </tr>
+    </thead>
+    <tbody>         
+    <a href="/descarga/MEJORESCLIENTES/{{ nombre }}.csv" target="blank"><button class='btn btn-default'>descarga</button></a>
+    {% for j in range(matriz|length) %}
+        
+          <tr>
+            <td>{{ matriz[j][0] }}</td>
+            <td>{{ matriz[j][1]|round }}</td>
+           
+          </tr>
+    {% endfor %}
+    
+    </tbody>
+  </table>
+</div>
+{% endblock %}

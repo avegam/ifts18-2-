@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}clientes{% endblock %}
+
+{% block page_content %}
+<div class="container">
+<div class="page-header">
+    {{ wtf.quick_form(form) }}
+</div>  
+  <p></p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{ orden[0] }}</th>
+        <th>{{ orden[1] }}</th>
+        <th>{{ orden[2] }}</th>
+        <th>{{ orden[3] }}</th>
+        <th>{{ orden[4] }}</th>
+      </tr>
+    </thead>
+    <tbody>Busqueda por cliente: {{ cliente }}
+<a href="/descarga/CLIENTE/{{ nombre }}.csv" target="blank"><button class='btn btn-default'>descarga</button></a>
+    {% for j in listadict %}
+        {% if cliente == j["CLIENTE"] %}
+          <tr>
+            <td>{{ j[orden[0]] }}</td>
+            <td>{{ j[orden[1]] }}</td>
+            <td>{{ j[orden[2]] }}</td>
+            <td>{{ j[orden[3]] }}</td>
+            <td>{{ j[orden[4]] }}</td>       
+          </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
